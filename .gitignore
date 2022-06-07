@@ -10,7 +10,10 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Project directories
+# Emacs backup files
+*~
+
+# Project build directories
 target/
 
 # Package Files #
