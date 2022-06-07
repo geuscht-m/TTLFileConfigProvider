@@ -14,10 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.kafka.common.config.provider;
+package com.lonecppcoder.kafka.config.ttl.fileconfig;
 
 import org.apache.kafka.common.config.ConfigData;
 import org.apache.kafka.common.config.ConfigException;
+import org.apache.kafka.common.config.provider.ConfigProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,9 +36,9 @@ import java.util.Set;
  * An implementation of {@link ConfigProvider} that represents a Properties file.
  * All property keys and values are stored as cleartext.
  */
-public class FileConfigProvider implements ConfigProvider {
+public class TTLFileConfigProvider implements ConfigProvider {
 
-    private static final Logger log = LoggerFactory.getLogger(FileConfigProvider.class);
+    private static final Logger log = LoggerFactory.getLogger(TTLFileConfigProvider.class);
 
     public void configure(Map<String, ?> configs) {
     }
