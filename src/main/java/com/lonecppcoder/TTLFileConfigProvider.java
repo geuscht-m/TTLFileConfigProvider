@@ -39,8 +39,10 @@ import java.util.Set;
 public class TTLFileConfigProvider implements ConfigProvider {
 
     private static final Logger log = LoggerFactory.getLogger(TTLFileConfigProvider.class);
+    private TTLFileConfigProviderConfig configData;
 
     public void configure(Map<String, ?> configs) {
+        this.configData = new TTLFileConfigProviderConfig(configs);
     }
 
     /**
