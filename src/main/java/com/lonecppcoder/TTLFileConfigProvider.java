@@ -14,11 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.lonecppcoder.kafka.config.ttl.fileconfig;
+package com.lonecppcoder.kafka.config;
 
 import org.apache.kafka.common.config.ConfigData;
 import org.apache.kafka.common.config.ConfigException;
 import org.apache.kafka.common.config.provider.ConfigProvider;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,10 +40,10 @@ import java.util.Set;
 public class TTLFileConfigProvider implements ConfigProvider {
 
     private static final Logger log = LoggerFactory.getLogger(TTLFileConfigProvider.class);
-    private TTLFileConfigProviderConfig configData;
+    //private TTLFileConfigProviderConfig configData;
 
     public void configure(Map<String, ?> configs) {
-        this.configData = new TTLFileConfigProviderConfig(configs);
+        //this.configData = new TTLFileConfigProviderConfig(configs);
     }
 
     /**

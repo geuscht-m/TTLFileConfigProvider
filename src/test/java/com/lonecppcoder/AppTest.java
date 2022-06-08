@@ -1,4 +1,6 @@
-package com.lonecppcoder;
+package com.lonecppcoder.kafka.config;
+
+import org.apache.kafka.common.config.ConfigData;
 
 import static org.junit.Assert.assertTrue;
 
@@ -16,5 +18,20 @@ public class AppTest
     public void shouldAnswerWithTrue()
     {
         assertTrue( true );
+    }
+
+    @Test
+    public void tryInstantiateConfigProvider() {
+        TTLFileConfigProvider p = new TTLFileConfigProvider();
+        assertTrue( p != null);
+    }
+
+    @Test
+    public void tryRetrieveConfigItem() {
+        TTLFileConfigProvider p = new TTLFileConfigProvider();
+
+        ConfigData d = p.get("src/test/resources/test-config.properties");
+        System.out.println(d.data().toString());
+        System.out.flush();
     }
 }

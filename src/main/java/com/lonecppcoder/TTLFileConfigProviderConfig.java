@@ -4,7 +4,7 @@
  * Licensed under Apache Licence, Version 2.0
  *
  */
-package com.lonecppcoder.kafka.config.ttl.fileconfig;
+package com.lonecppcoder.kafka.config;
 
 import org.apache.kafka.common.config.AbstractConfig;
 import org.apache.kafka.common.config.ConfigDef;
