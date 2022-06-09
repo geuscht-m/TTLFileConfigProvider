@@ -54,11 +54,14 @@ public class TTLFileConfigProvider implements ConfigProvider {
      * @return the configuration data
      */
     public ConfigData get(String path) {
+        log.info("Retrieving config data from path '{}'", path);
+
         Map<String, String> data = new HashMap<>();
         if (path == null || path.isEmpty()) {
             return new ConfigData(data);
         }
         try (Reader reader = reader(path)) {
+            log.info("Reloading configuration data from {}", path);
             Properties properties = new Properties();
             properties.load(reader);
             Enumeration<Object> keys = properties.keys();
@@ -69,7 +72,7 @@ public class TTLFileConfigProvider implements ConfigProvider {
                     data.put(key, value);
                 }
             }
-            return new ConfigData(data);
+            return new ConfigData(data, this.configData.maxSecretTTL);
         } catch (IOException e) {
             log.error("Could not read properties from file {}", path, e);
             throw new ConfigException("Could not read properties from file " + path);
