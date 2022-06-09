@@ -40,10 +40,11 @@ import java.util.Set;
 public class TTLFileConfigProvider implements ConfigProvider {
 
     private static final Logger log = LoggerFactory.getLogger(TTLFileConfigProvider.class);
-    //private TTLFileConfigProviderConfig configData;
+    private TTLFileConfigProviderConfig configData;
 
     public void configure(Map<String, ?> configs) {
-        //this.configData = new TTLFileConfigProviderConfig(configs);
+        log.info("Building configuration from {}", configs);
+        this.configData = new TTLFileConfigProviderConfig(configs);
     }
 
     /**
@@ -83,6 +84,7 @@ public class TTLFileConfigProvider implements ConfigProvider {
      * @return the configuration data
      */
     public ConfigData get(String path, Set<String> keys) {
+        log.info("Retrieving config data from path '{}'", path);
         Map<String, String> data = new HashMap<>();
         if (path == null || path.isEmpty()) {
             return new ConfigData(data);
@@ -96,7 +98,8 @@ public class TTLFileConfigProvider implements ConfigProvider {
                     data.put(key, value);
                 }
             }
-            return new ConfigData(data);
+            log.info("Returning new config data with TTL '{}'", this.configData.maxSecretTTL);
+            return new ConfigData(data, this.configData.maxSecretTTL);
         } catch (IOException e) {
             log.error("Could not read properties from file {}", path, e);
             throw new ConfigException("Could not read properties from file " + path);

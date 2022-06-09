@@ -12,7 +12,7 @@ import org.apache.kafka.common.config.ConfigDef;
 import java.util.Map;
 
 class TTLFileConfigProviderConfig extends AbstractConfig {
-    public static final String TTL_MS_CONFIG = "ttfileconfig.ttl.ms";
+    public static final String TTL_MS_CONFIG = "ttlfileconfig.ttl.ms";
     static final String TTL_MS_CONFIG_DOC = "The maximum amount of time the secrets read by the TTLFileConfigProvider are valid";
 
     public final long maxSecretTTL;
