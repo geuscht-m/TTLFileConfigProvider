@@ -3,6 +3,9 @@
  *
  * Licensed under Apache Licence, Version 2.0
  *
+ * Please see the LICENSE file in the project's root directory for
+ * details of the license.
+ *
  */
 package com.lonecppcoder.kafka.config;
 

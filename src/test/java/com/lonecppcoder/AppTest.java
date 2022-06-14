@@ -1,3 +1,12 @@
+/**
+ * Copyright 2022 Timo Geusch (timo@lonecppcoder.com)
+ *
+ * Licensed under Apache Licence, Version 2.0
+ *
+ * Please see the LICENSE file in the project's root directory for
+ * details of the license.
+ *
+ */
 package com.lonecppcoder.kafka.config;
 
 import org.apache.kafka.common.config.ConfigData;
@@ -12,21 +21,9 @@ import java.util.TreeSet;
 
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
+public class AppTest
 {
     private static final long ttl = 45000L;
-
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
-    }
 
     @Test
     public void tryInstantiateConfigProvider() {
