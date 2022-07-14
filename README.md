@@ -1,4 +1,4 @@
-# TTLFileConfigProvier
+# TTLFileConfigProvider
 
 A proof of concept Kafka Connect ConfigProvider that refreshes its data from a file based on a provided TTL. Based on the default Apache Kafka [FileConfigProvider](https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/common/config/provider/FileConfigProvider.java) with some minor modifications.
 
